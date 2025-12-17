@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucy’s Coding | Web Developer Portfolio</title>
+    <meta name="description"
+        content="Portfolio di Lucy’s Coding - sviluppo siti web moderni e ottimizzati per attività locali, brand indipendenti e professionisti.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav class="container" aria-label="Navigazione principale">
+            <a href="#" class="logo">Lucy’s Coding</a>
+            <button class="nav-toggle" aria-expanded="false" aria-label="Apri menu" aria-controls="primary-navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="nav-menu" id="primary-navigation">
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#chi-sono">Chi sono</a></li>
+                    <li><a href="#metodo">Metodo</a></li>
+                    <li><a href="#progetti">Progetti</a></li>
+                    <li><a href="#servizi">Servizi</a></li>
+                    <li><a href="#blog">Risorse</a></li>
+                </ul>
+                <a href="#contatti" class="nav-cta">Lavora con me</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <!-- HERO -->
+        <section id="hero" class="container">
+
+            <canvas id="hero-canvas"></canvas>
+
+            <div class="hero-text">
+                <h1>Siti web su misura per attività locali e brand indipendenti.</h1>
+                <p>Aiuto piccole imprese, ristoranti, palestre e studi estetici a farsi trovare online con siti veloci,
+                    moderni e ottimizzati per convertire visitatori in clienti reali.</p>
+                <a href="#progetti" class="btn btn-primary">Guarda i miei progetti</a>
+            </div>
+
+        </section>
+
+        <!-- CHI SONO -->
+        <section id="chi-sono" class="container about-section">
+            <div class="about-content">
+
+                <!-- ANIMAZIONE A SINISTRA -->
+                <div class="about-animation">
+                    <dotlottie-wc src="https://lottie.host/30e7ffd2-b6c7-4397-849a-ff6ad57462cb/kgWKyLpMJf.lottie"
+                        style="width: 320px; height: 320px; margin: 0 auto;" autoplay loop>
+                    </dotlottie-wc>
+                </div>
+
+                <!-- TESTO A DESTRA -->
+                <div class="about-text">
+                    <div class="about-heading">
+                        <div class="about-icon">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h2>Chi sono</h2>
+                    </div>
+                    <p class="about-intro">
+                        Ciao! Sono Lucy, web developer freelance specializzata in siti per piccole attività.
+                        <br><br>
+                        Non sono una grande agenzia dai processi complicati: sono una professionista indipendente che
+                        cura
+                        ogni
+                        riga di codice come un artigiano cura il suo prodotto.
+                        Il mio obiettivo? Togliere dal tavolo lo stress della tecnologia e consegnarti un sito veloce,
+                        ordinato
+                        e capace di lavorare per te mentre tu ti occupi del tuo business.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- METODO -->
+        <section id="metodo" class="container">
+            <h2>Il mio metodo</h2>
+            <p class="method-intro">
+                Ogni sito che realizzo è progettato con un approccio strategico, semplice e orientato ai risultati.
+            </p>
+            <div class="method-grid">
+                <div class="method-card">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <h4>1. Analisi e obiettivi</h4>
+                    <p>Parto sempre da ciò che conta davvero: capire i tuoi obiettivi, il tuo pubblico e cosa rende
+                        unica la tua attività.</p>
+                </div>
+                <div class="method-card">
+                    <i class="fa-solid fa-palette"></i>
+                    <h4>2. Design e struttura</h4>
+                    <p>Creo un design pulito, coerente e strategico, curando la user experience e l’identità visiva.</p>
+                </div>
+                <div class="method-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h4>3. Ottimizzazione e risultati</h4>
+                    <p>Ottimizzo il sito per SEO e velocità, così il tuo business può crescere nel tempo in modo
+                        organico.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROGETTI -->
+        <section id="progetti" class="container">
+            <h2>Progetti</h2>
+            <div class="project-grid">
+
+                <!-- OSTERIA -->
+                <div class="project-card">
+                    <div class="slider-container">
+                        <div class="slide active">
+                            <img src="images/osteriaghirlandina.netlify.app_desktop.webp" alt="Anteprima desktop">
+                        </div>
+                        <div class="slide">
+                            <img src="images/osteriaghirlandina.netlify.app_mobile.webp" alt="Anteprima mobile">
+                        </div>
+                        <button class="slider-btn prev">&#10094;</button>
+                        <button class="slider-btn next">&#10095;</button>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Osteria della Ghirlandina</h3>
+                        <p>Sito vetrina per un ristorante locale, con immagini ad alta qualità e sezione menù intuitiva.
+                        </p>
+                        <a href="https://osteriaghirlandina.netlify.app" target="_blank" class="project-btn">Visita
+                            il Sito</a>
+                    </div>
+                </div>
+
+                <!-- PIZZERIA -->
+                <div class="project-card">
+                    <div class="slider-container">
+                        <div class="slide active">
+                            <img src="images/pizzeriabellanapolidemo.netlify.app_desktop.webp"
+                                alt="Anteprima desktop Pizzeria">
+                        </div>
+                        <div class="slide">
+                            <img src="images/pizzeriabellanapolidemo.netlify.app_mobile.webp"
+                                alt="Anteprima mobile Pizzeria">
+                        </div>
+                        <button class="slider-btn prev">&#10094;</button>
+                        <button class="slider-btn next">&#10095;</button>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Pizzeria Bella Napoli</h3>
+                        <p>Sito dinamico con menù filtrabile e design ottimizzato per invogliare alla prenotazione.</p>
+                        <a href="https://pizzeriabellanapolidemo.netlify.app" target="_blank" class="project-btn">Visita
+                            il Sito</a>
+                    </div>
+                </div>
+
+                <!-- GLOWME -->
+                <div class="project-card">
+                    <div class="slider-container">
+                        <div class="slide active">
+                            <img src="images/glowmeesteticademo.netlify.app_desktop.webp"
+                                alt="Anteprima desktop GlowMe Estetica">
+                        </div>
+                        <div class="slide">
+                            <img src="images/glowmeesteticademo.netlify.app_mobile.webp"
+                                alt="Anteprima mobile GlowMe Estetica">
+                        </div>
+                        <button class="slider-btn prev">&#10094;</button>
+                        <button class="slider-btn next">&#10095;</button>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>GlowMe Estetica</h3>
+                        <p>Sito moderno e luminoso pensato per studi estetici e saloni di bellezza.</p>
+                        <a href="https://glowmeesteticademo.netlify.app" target="_blank" class="project-btn">Visita il
+                            Sito</a>
+                    </div>
+                </div>
+
+                <!-- PALESTRA -->
+                <div class="project-card">
+                    <div class="slider-container">
+                        <div class="slide active">
+                            <img src="images/fitnessdemowebsite.netlify.app_desktop.webp"
+                                alt="Anteprima desktop Palestra Fitness">
+                        </div>
+                        <div class="slide">
+                            <img src="images/fitnessdemowebsite.netlify.app_mobile.webp"
+                                alt="Anteprima mobile Palestra Fitness">
+                        </div>
+                        <button class="slider-btn prev">&#10094;</button>
+                        <button class="slider-btn next">&#10095;</button>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>LineUp Fitness</h3>
+                        <p>Landing page demo per palestra “Fitness”, progettata per comunicare motivazione, valori della
+                            community e servizi principali in modo chiaro e coinvolgente. La struttura include sezioni
+                            “Chi siamo”, “Servizi”, “La nostra missione” e “Contatti”, con pulsanti intuitivi per
+                            iscrizione e messaggi diretti tramite WhatsApp o social.</p>
+                        <a href="https://fitnessdemowebsite.netlify.app" target="_blank" class="project-btn">Visita il
+                            Sito</a>
+                    </div>
+                </div>
+
+                <!-- PSICOLOGI -->
+                <div class="project-card">
+                    <div class="slider-container">
+                        <div class="slide active">
+                            <img src="images/psicologidemo.netlify.app_Desktop.webp"
+                                alt="Anteprima desktop Palestra Fitness">
+                        </div>
+                        <div class="slide">
+                            <img src="images/psicologidemo.netlify.app_Mobile.webp"
+                                alt="Anteprima mobile Palestra Fitness">
+                        </div>
+                        <button class="slider-btn prev">&#10094;</button>
+                        <button class="slider-btn next">&#10095;</button>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Psicologo Mario Rossi</h3>
+                        <p>Landing page demo per professionisti della psicologia, progettata per comunicare fiducia ed
+                            empatia senza risultare commerciale.
+                            Design contemporaneo, animazioni morbide, struttura orientata alla conversione e
+                            integrazione con WhatsApp e piattaforme di prenotazione esterne.</p>
+                        <a href="https://psicologidemo.netlify.app/" target="_blank" class="project-btn">Visita il
+                            Sito</a>
+                    </div>
+                </div>
+
+                <!-- SIS MODENA -->
+                <div class="project-card">
+                    <div class="slider-container">
+                        <div class="slide active">
+                            <img src="images/sismodena.netlify.app_desktop.webp"
+                                alt="Anteprima desktop Palestra Fitness">
+                        </div>
+                        <div class="slide">
+                            <img src="images/sismodena.netlify.app_mobile.webp" alt="Anteprima mobile Palestra Fitness">
+                        </div>
+                        <button class="slider-btn prev">&#10094;</button>
+                        <button class="slider-btn next">&#10095;</button>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Carpenteria Metallica - SIS Modena</h3>
+                        <p>Sito web per carpenteria metallica a Modena realizzato con un design pulito e funzionale. La
+                            pagina presenta servizi chiari, una struttura intuitiva e call-to-action dirette per
+                            facilitare il contatto. Il layout è ottimizzato per performance su desktop e mobile, con
+                            focus su accessibilità e comunicazione di affidabilità professionale attraverso sezioni ben
+                            organizzate e contenuti esplicativi.</p>
+                        <a href="https://sismodena.netlify.app/" target="_blank" class="project-btn">Visita il
+                            Sito</a>
+                    </div>
+                </div>
+        </section>
+
+        <!-- SERVIZI -->
+        <section id="servizi" class="container">
+            <h2>Servizi</h2>
+            <ul class="services-list">
+                <li>
+                    <h4>Creazione Siti Web</h4>
+                    <p>Siti vetrina e landing page pensati per convertire. Design moderno, SEO e velocità al centro.</p>
+                </li>
+                <li>
+                    <h4>Restyling e Ottimizzazione</h4>
+                    <p>Aggiorno siti esistenti migliorando grafica, struttura e performance per risultati immediati.</p>
+                </li>
+                <li>
+                    <h4>Web App e Funzionalità Dinamiche</h4>
+                    <p>Soluzioni interattive per gestire prenotazioni, ordini o contatti direttamente dal tuo sito.</p>
+                </li>
+                <li>
+                    <h4>SEO & Strategia Digitale</h4>
+                    <p>Ottimizzo il tuo sito per farti apparire su Google e attrarre clienti realmente interessati.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- PERCHÉ SCEGLIERMI -->
+        <section id="perche" class="container">
+            <h2>Perché scegliere Lucy’s Coding</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <i class="fa-solid fa-rocket"></i>
+                    <h4>Design che converte</h4>
+                    <p>Non solo bello: ogni sito è pensato per guidare l’utente verso l’azione giusta.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <h4>Ottimizzato per ogni dispositivo</h4>
+                    <p>Perfetto su smartphone, tablet e desktop. Il tuo sito funziona ovunque.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <h4>SEO & Performance</h4>
+                    <p>Curati i dettagli tecnici per farti trovare e caricarti in pochi secondi.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-heart"></i>
+                    <h4>Approccio umano</h4>
+                    <p>Nessun tecnicismo inutile: solo soluzioni semplici, chiare e personalizzate.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOG -->
+        <section id="blog" class="container">
+            <h2>Risorse e Consigli</h2>
+            <p class="section-subtitle">Mini-guide per migliorare la tua presenza online e far crescere il tuo business.
+            </p>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <h3>Hai davvero bisogno di un sito web? La guida rapida per capirlo subito</h3>
+                    <p>Capisci in pochi minuti quando un sito è davvero necessario, cosa deve contenere e perché i
+                        social da soli non
+                        bastano.</p>
+                    <a href="articolo1-sito-web.html" class="blog-btn">Leggi l’articolo →</a>
+                </article>
+
+                <article class="blog-card">
+                    <h3>Come rendere la tua home page davvero efficace</h3>
+                    <p>La prima impressione conta: vediamo come guidare subito l’utente verso l’azione giusta.</p>
+                    <a href="articolo-homepage-efficace.html" class="blog-btn">Leggi l’articolo →</a>
+                </article>
+                <article class="blog-card">
+                    <h3>3 errori da evitare se vuoi vendere con il tuo sito web</h3>
+                    <p>I tre sbagli più comuni che impediscono a un sito di generare clienti — e come risolverli in modo
+                        semplice.</p>
+                    <a href="articolo-errori-sito.html" class="blog-btn">Leggi l’articolo →</a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CONTATTI -->
+        <section id="contatti" class="container">
+            <h2>Hai un progetto in mente?</h2>
+            <p class="contact-subtitle">
+                Vuoi migliorare il tuo sito o crearne uno nuovo?
+                Scrivimi per un preventivo gratuito e senza impegno.
+                Ti risponderò personalmente entro 24 ore.
+            </p>
+            <form name="contact" method="POST" data-netlify="true" action="success.html" class="contact-form">
+                <input type="hidden" name="form-name" value="contact">
+
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" placeholder="Mario Rossi" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="mario@esempio.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Messaggio</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Raccontami del tuo progetto..."
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-submit">Invia Richiesta</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+
+            <div class="footer-socials">
+                <a href="https://github.com/lucyscoding-asmr" target="_blank" aria-label="GitHub"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="https://www.youtube.com/@LucysCodingASMR" target="_blank" aria-label="YouTube"><i
+                        class="fa-brands fa-youtube"></i></a>
+            </div>
+
+            <div style="text-align: center;">
+                <p>&copy; 2025 Lucy’s Coding. Tutti i diritti riservati.</p>
+                <p style="font-size: 0.85rem; margin-top: 0.5rem;">
+                    <a href="privacy.html" style="color: var(--secondary-text-color); text-decoration: none;">Privacy
+                        Policy</a>
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#hero">Torna su</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

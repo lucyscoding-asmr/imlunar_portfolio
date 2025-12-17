@@ -1,0 +1,1215 @@
+/* Importazione Font */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&family=Poppins:wght@400;600&display=swap');
+
+/* Variabili Colori */
+:root {
+    --bg-color: #0d0d1a;
+    --primary-color: #1a1a2e;
+    --accent-color: #4a69ff; /* Un blu vibrante */
+    --text-color: #f0f0f0;
+    --secondary-text-color: #a0a0b0;
+    --header-height: 78px;
+}
+
+/* Stili Globali */
+* { margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+  }
+html { 
+  scroll-behavior: smooth; 
+}
+body { 
+  font-family: 'Poppins', sans-serif; 
+  background-color: var(--bg-color); 
+  color: var(--text-color); 
+  line-height: 1.6; 
+}
+.container { 
+  max-width: 1100px; 
+  margin: 0 auto; 
+  padding: 0 2rem; 
+}
+h1, h2, h3 { 
+  font-family: 'Fira Code', monospace; 
+  font-weight: 700; 
+  line-height: 1.2; 
+  margin-bottom: 1rem; 
+}
+h1 { 
+  font-size: 3rem; 
+}
+h2 { 
+  font-size: 2.5rem; 
+  text-align: center; 
+  margin-bottom: 3rem; 
+}
+h3 { 
+  font-size: 1.5rem; 
+  color: var(--text-color); 
+}
+p { 
+  font-family: 'Poppins', sans-serif; 
+  color: var(--secondary-text-color); 
+  margin-bottom: 1rem; 
+}
+a { 
+  color: var(--text-color); 
+  text-decoration: none; 
+}
+ul { 
+  list-style: none; 
+}
+section { 
+  padding: 6rem 0; 
+}
+
+/* ========= HEADER / NAV ========= */
+header { 
+  background-color: rgba(13, 13, 26, 0.8); 
+  backdrop-filter: blur(10px); 
+  border-bottom: 1px solid #2a2a3e; 
+  padding: 1rem 0; 
+  position: relative;
+  z-index: 1000; /* Assicura che l'header sia sempre sopra a tutto (Hero, testo, animazioni) */
+}
+header nav { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  position: relative;
+  gap: 1.5rem;
+}
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-left: auto;
+}
+.logo { 
+  font-size: 1.5rem; 
+  font-weight: 700; 
+}
+header ul { 
+  display: flex; 
+  gap: 2rem; 
+}
+header ul a { 
+  transition: color 0.3s ease; 
+}
+header ul a:hover { 
+  color: var(--accent-color); 
+}
+.nav-youtube { 
+  font-weight: 600; 
+  border: 1px solid var(--accent-color); 
+  padding: 0.5rem 1rem; 
+  border-radius: 5px; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+.nav-youtube:hover { 
+  background-color: var(--accent-color); 
+  color: var(--bg-color); 
+}
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(13, 13, 26, 0.45);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+.nav-toggle::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.nav-toggle .bar {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background-color: var(--text-color);
+  border-radius: 999px;
+  transform-origin: center;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease, width 0.3s ease, background-color 0.3s ease;
+}
+.nav-toggle.open {
+  background-color: rgba(74, 105, 255, 0.12);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 20px rgba(74, 105, 255, 0.35);
+}
+.nav-toggle.open::before {
+  border-color: rgba(74, 105, 255, 0.8);
+  transform: scale(1.08);
+}
+.nav-toggle.open .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+  width: 26px;
+  background-color: #ffffff;
+}
+.nav-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav-toggle.open .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+  width: 26px;
+  background-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  header nav {
+    gap: 0.5rem;
+  }
+  .nav-menu {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    background-color: rgba(13, 13, 26, 0.95);
+    border: 1px solid #2a2a3e;
+    border-radius: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+    z-index: 200;
+  }
+  .nav-menu.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  header ul {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .nav-cta {
+    width: 100%;
+    text-align: center;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+}
+
+/* ========= HERO ========= */
+#hero { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  min-height: 100vh; 
+  padding-top: 80px; 
+  gap: 2rem; 
+}
+.hero-text { 
+  flex: 1; 
+}
+.hero-text p { 
+  font-size: 1.1rem; 
+  margin-bottom: 2rem; 
+}
+.hero-image { 
+  flex: 1; 
+  text-align: center; 
+}
+.hero-image img { 
+  max-width: 80%; 
+  animation: float 4s ease-in-out infinite; 
+}
+@keyframes float { 
+  0% { transform: translateY(0px); } 
+  50% { transform: translateY(-20px); } 
+  100% { transform: translateY(0px); } 
+}
+.btn { 
+  display: inline-block; 
+  padding: 0.8rem 2rem; 
+  border-radius: 5px; 
+  font-weight: 600; 
+  transition: all 0.3s ease; 
+}
+.btn-primary { 
+  background-color: var(--accent-color); 
+  color: #fff; 
+}
+.btn-primary:hover { 
+  transform: translateY(-3px); 
+  box-shadow: 0 5px 15px rgba(74, 105, 255, 0.4); 
+}
+
+/* Modifiche per lo sfondo animato */
+
+#hero {
+    position: relative; /* Fondamentale per posizionare il canvas */
+    overflow: hidden;   /* Impedisce che l'animazione sbordi */
+    /* Manteniamo le tue regole precedenti di flex/padding */
+    z-index: 1;
+}
+
+#hero-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Mette l'animazione DIETRO al testo */
+    opacity: 0.6; /* Regola l'intensità generale (0.6 è elegante, non disturba) */
+}
+
+/* Assicuriamoci che il testo sia leggibile sopra l'animazione */
+.hero-text {
+    z-index: 2;
+    position: relative;
+    /* Un'ombra leggera al testo aiuta la leggibilità se passa un pallino sotto */
+    text-shadow: 0 2px 10px rgba(13, 13, 26, 0.8);
+}
+
+/* ========= CHI SONO ========= */
+#chi-sono { 
+  text-align: right; 
+}
+.about-intro { 
+  max-width: 600px; 
+  margin: 2rem auto; 
+  font-size: 1.1rem; 
+}
+.social-links a { 
+  font-size: 1.8rem; 
+  margin: 0 1rem; 
+  color: var(--secondary-text-color); 
+  transition: color 0.3s ease; 
+}
+.social-links a:hover { 
+  color: var(--accent-color); 
+}
+/* ===== CHI SONO - Animazione a sinistra, testo a destra ===== */
+.about-section {
+  margin-top: 6rem;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.about-animation {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 1;
+}
+
+.about-text {
+  flex: 1 1 400px;
+  text-align: left;
+  order: 2;
+}
+
+.about-intro {
+  max-width: 600px;
+  font-size: 1.1rem;
+  color: var(--secondary-text-color);
+  margin: 1.5rem 0;
+}
+
+.about-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.about-text h2 {
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.about-icon {
+  color: var(--accent-color);
+  font-size: 2rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-animation {
+    order: 1;
+    margin-bottom: 2rem;
+  }
+  .about-text {
+    order: 2;
+    text-align: center;
+  }
+  .about-heading {
+    justify-content: center;
+  }
+  .about-text h2 {
+    text-align: center;
+  }
+}
+
+/* ========= PROGETTI ========= */
+/* Aggiungo spazio extra sopra la sezione progetti per separarla dalla sezione precedente */
+#progetti {
+  margin-top: 5rem;
+}
+.project-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+  gap: 2rem; 
+}
+.project-card { 
+  background-color: var(--primary-color); 
+  border-radius: 10px; 
+  overflow: hidden; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  border: 1px solid #2a2a3e; 
+  position: relative; 
+}
+.project-card {
+  display: flex;
+  flex-direction: column;
+}
+.project-card:hover { 
+  transform: translateY(-10px); 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
+}
+.project-card img { 
+  width: 100%; 
+  height: 220px; 
+  object-fit: cover; 
+  display: block; 
+}
+.project-card h3, .project-card p { 
+  padding: 0 1.5rem; 
+}
+.project-card h3 { 
+  margin-top: 1.5rem; 
+}
+.project-card p { 
+  padding-bottom: 1.5rem; 
+  font-size: 0.9rem; 
+}
+
+/* ---- STILI PER SLIDER PROGETTO ---- */
+.project-link { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  z-index: 3; 
+}
+.slider-container { 
+  position: relative; 
+  height: 400px; 
+  background-color: #000; 
+  overflow: hidden; 
+}
+.slider-container .slide { 
+  display: none; 
+  width: 100%; 
+  height: 100%; 
+  padding: 10px; 
+}
+.slider-container .slide.active { 
+  display: block; 
+}
+.slider-container img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain; 
+  border-radius: 5px; 
+}
+.slider-btn { 
+  position: absolute; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: white; 
+  border: none; 
+  padding: 10px; 
+  cursor: pointer; 
+  z-index: 4; 
+  border-radius: 50%; 
+  width: 40px; 
+  height: 40px; 
+  font-size: 18px; 
+  line-height: 18px; 
+  transition: background-color 0.3s ease; 
+}
+.slider-btn:hover { 
+  background-color: rgba(0, 0, 0, 0.8); 
+}
+.prev { 
+  left: 10px; 
+}
+.next { 
+  right: 10px; 
+}
+/* ---- STILI AGGIUNTIVI PER CARD PROGETTO ---- */
+
+/* Contenitore per il testo e il bottone */
+.project-card-content {
+  padding: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto; /* permette al contenuto di occupare lo spazio rimanente */
+}
+
+/* Rimuove il padding individuale che non serve più */
+.project-card h3, .project-card p {
+    padding: 0;
+}
+
+/* Stile del nuovo bottone "Visita il Sito" */
+.project-btn {
+    display: inline-block;
+    margin-top: 1rem; /* Spazio sopra il bottone */
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Posiziona il bottone in fondo alla card, allineato tra tutte le card della stessa riga */
+.project-btn {
+  margin-top: auto;
+}
+
+.project-btn:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+/* ---- FINE STILI SLIDER ---- */
+
+/* ========= SERVIZI & YOUTUBE ========= */
+.services-youtube-grid { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 4rem; 
+  align-items: center; 
+}
+.youtube-section h3, .services-section h3 { 
+  text-align: left; 
+  margin-bottom: 2rem; 
+  font-size: 2rem; 
+}
+.video-placeholder { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  width: 100%; 
+  height: 300px; 
+  background-color: #000; 
+  border-radius: 10px; 
+  font-size: 5rem; 
+  color: red; 
+  transition: transform 0.3s ease; 
+}
+.video-placeholder:hover { 
+  transform: scale(1.03); 
+}
+.youtube-link { 
+  display: inline-block; 
+  margin-top: 1.5rem; 
+  font-weight: 600; 
+}
+.youtube-link:hover { 
+  color: var(--accent-color); 
+}
+.services-section ul { list-style: none; }
+.services-section li { 
+  font-size: 1.2rem; 
+  margin-bottom: 1rem; 
+  padding-left: 1.5rem; 
+  position: relative; 
+}
+.services-section li::before { 
+  content: '✓'; 
+  color: var(--accent-color); 
+  position: absolute; 
+  left: 0; 
+}
+
+/* ========= BLOG / ARTICOLI ========= */
+body.blog-page {
+  background-color: var(--bg-color);
+}
+.back-btn {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.06);
+    color: var(--text-color);
+    background: rgba(255,255,255,0.02);
+    text-decoration: none;
+    font-weight: 600;
+}
+.back-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+.blog-page .blog-article {
+  max-width: 820px;
+  /* Navbar ora è parte del flusso, quindi non serve un padding-top così grande */
+  padding: 3rem 2rem 5rem;
+}
+.blog-hero {
+  margin-bottom: 3.5rem;
+}
+.blog-eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+.blog-hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  margin: 1rem 0 1.5rem;
+}
+.blog-article .section-subtitle {
+  font-size: 1.1rem;
+  max-width: 640px;
+  color: var(--secondary-text-color);
+}
+.blog-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--secondary-text-color);
+  font-size: 0.95rem;
+}
+.blog-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.blog-section {
+  margin-bottom: 3rem;
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(26,26,46,0.9) 0%, rgba(13,13,26,0.95) 100%);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+.blog-section h2 {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+}
+.blog-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.blog-box {
+  padding: 1.2rem;
+  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.blog-box h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+.blog-list {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+.blog-list li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+.blog-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent-color);
+}
+.blog-highlight {
+  margin-top: 1.5rem;
+  padding: 1.2rem;
+  border-radius: 12px;
+  background-color: rgba(74, 105, 255, 0.12);
+  border: 1px solid rgba(74, 105, 255, 0.4);
+  font-weight: 600;
+}
+.blog-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(circle at top, rgba(74, 105, 255, 0.25), rgba(26, 26, 46, 0.95));
+  gap: 0.75rem;
+}
+.blog-cta h2 {
+  text-align: center;
+}
+.blog-cta .btn {
+  margin-top: 1.5rem;
+}
+.cta-note {
+  font-size: 0.95rem;
+  color: var(--secondary-text-color);
+  margin-top: 1rem;
+}
+
+/* ========= FOOTER ========= */
+footer { 
+  text-align: center; 
+  padding: 2rem 0; 
+  border-top: 1px solid #2a2a3e; 
+  color: var(--secondary-text-color); 
+}
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    #hero { 
+      flex-direction: column; 
+      text-align: center; 
+      min-height: auto; 
+      padding: 8rem 0 4rem 0; 
+    }
+    .hero-image img { max-width: 60%; }
+    .services-youtube-grid { 
+      grid-template-columns: 1fr; 
+    }
+    .blog-page .blog-article {
+      padding-top: calc(var(--header-height) + 30px);
+    }
+    .blog-section {
+      padding: 2rem 1.5rem;
+    }
+    .blog-grid-2 {
+      grid-template-columns: 1fr;
+    }
+    .blog-meta {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+}
+
+/* ---- STILI AGGIUNTIVI PER CONVERSIONE CLIENTI ---- */
+
+/* Stile per il nuovo bottone "Lavora con me" nell'header */
+.nav-cta {
+    font-weight: 600;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(74, 105, 255, 0.4);
+}
+
+/* Nuova griglia per i servizi */
+#servizi {
+    background-color: var(--primary-color);
+    padding: 5rem 2rem;
+    border-radius: 15px;
+    margin-top: 6rem;
+}
+
+#servizi h2 {
+    margin-bottom: 4rem;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Due colonne */
+    gap: 2.5rem;
+    text-align: center;
+}
+
+.services-list li {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #2a2a3e;
+    transition: transform 0.3s ease;
+}
+
+.services-list li:hover {
+    transform: translateY(-10px);
+}
+
+.services-list h4 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+/* Nuova Sezione Contatti */
+#contatti {
+    text-align: center;
+    background-color: var(--primary-color); /* Sfondo leggermente diverso per farla risaltare */
+    padding: 5rem 2rem;
+    border-radius: 15px;
+    margin-bottom: 6rem;
+    margin-top: 6rem;
+}
+
+#contatti h2 {
+    font-size: 2.4rem;
+}
+
+.contact-subtitle {
+    max-width: 650px;
+    margin: 0 auto 2.5rem auto;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.btn-contact {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+}
+
+/* Responsive per la lista servizi */
+@media (max-width: 768px) {
+    .services-list {
+        grid-template-columns: 1fr; /* Una colonna su mobile */
+    }
+}
+
+/* ================================
+   NUOVE SEZIONI STRATEGICHE
+================================ */
+
+/* ===== IL MIO METODO ===== */
+#metodo {
+  background-color: var(--primary-color);
+  padding: 5rem 2rem;
+  border-radius: 15px;
+  margin-top: 6rem;
+  text-align: center;
+}
+
+#metodo h2 {
+  margin-bottom: 1rem;
+}
+
+.method-intro {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--secondary-text-color);
+  font-size: 1.1rem;
+}
+
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.method-card {
+  background-color: var(--bg-color);
+  border: 1px solid #2a2a3e;
+  border-radius: 10px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.method-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.method-card i {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+/* ===== PERCHÉ SCEGLIERMI ===== */
+#perche {
+  background-color: var(--primary-color);
+  padding: 5rem 2rem;
+  border-radius: 15px;
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.why-card {
+  background-color: var(--bg-color);
+  border: 1px solid #2a2a3e;
+  border-radius: 10px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.why-card i {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+/* ===== BLOG / RISORSE ===== */
+#blog {
+  background-color: var(--primary-color);
+  padding: 5rem 2rem;
+  border-radius: 15px;
+  margin-top: 6rem;
+  text-align: center;
+}
+
+#blog h2 {
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--secondary-text-color);
+  margin-bottom: 3rem;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.blog-card {
+  background-color: var(--bg-color);
+  border: 1px solid #2a2a3e;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.blog-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-color);
+}
+
+.blog-card p {
+  color: var(--secondary-text-color);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.blog-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.blog-btn:hover {
+  color: #ffffff;
+}
+
+/* ================================
+   STILI PER PAGINA ARTICOLO BLOG
+================================ */
+
+.blog-article {
+  max-width: 850px;
+  margin: 0 auto;
+  /* Padding più contenuto ora che header non è fisso */
+  padding: 3rem 2rem 5rem;
+  line-height: 1.75;
+  position: relative;
+  z-index: 1;
+}
+
+.blog-hero {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.blog-eyebrow {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.1rem;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.blog-hero h1 {
+    font-size: 2.3rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.blog-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.75;
+    margin-top: 0.6rem;
+}
+
+/* Sezioni */
+.blog-section {
+    margin-bottom: 3.5rem;
+}
+
+.blog-section h2 {
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    color: var(--text-color);
+}
+
+.blog-section p {
+    color: var(--secondary-text-color);
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* Liste ordinate e leggibili */
+.blog-list {
+    list-style: disc;
+    margin-left: 1.6rem;
+    display: grid;
+    gap: 0.6rem;
+}
+
+.blog-list li {
+    color: var(--secondary-text-color);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Evidenza */
+.blog-highlight {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 1.2rem 1.4rem;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+}
+
+/* Mini-card interne */
+.blog-grid-2 {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.2rem;
+}
+
+@media (min-width: 768px) {
+    .blog-grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.blog-box {
+    background: var(--primary-color);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.blog-box h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+/* CTA finale */
+.blog-cta {
+  text-align: center; /* Centratura di tutti gli elementi all'interno */
+  padding: 2rem;
+  background: var(--primary-color);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Assicuro che il bottone rimanga centrato anche se ha display block su mobile */
+.blog-cta .btn {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-cta .cta-note {
+  margin-top: 0.8rem;
+  text-align: center;
+}
+
+.blog-cta .btn-primary {
+    margin-top: 1rem;
+}
+
+.cta-note {
+    margin-top: 0.8rem;
+    opacity: 0.8;
+    font-size: 0.95rem;
+}
+
+/* ===== CONTATTI ===== */
+#contatti {
+  background-color: var(--primary-color);
+  padding: 5rem 2rem;
+  border-radius: 15px;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
+#contatti h2 {
+  margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+  max-width: 650px;
+  margin: 0 auto 2.5rem auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--secondary-text-color);
+}
+
+.btn-contact {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+/* ================================
+   STILI PER FORM CONTATTI (Dark Mode)
+================================ */
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left; /* Il form sta meglio allineato a sinistra anche se la sezione è centrata */
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+/* Stile Input e Textarea */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #2a2a3e; /* Bordo sottile coerente col tema */
+    background-color: rgba(13, 13, 26, 0.6); /* Sfondo scuro leggermente trasparente */
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Effetto Focus (quando clicchi per scrivere) */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color); /* Diventa blu vibrante */
+    box-shadow: 0 0 0 3px rgba(74, 105, 255, 0.2); /* Alone luminoso */
+    background-color: rgba(13, 13, 26, 0.9);
+}
+
+/* Stile Placeholder */
+.contact-form ::placeholder {
+    color: var(--secondary-text-color);
+    opacity: 0.6;
+}
+
+/* Bottone Submit */
+.btn-submit {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  #metodo, #perche, #blog {
+    padding: 3rem 1rem;
+  }
+
+  .method-grid, .why-grid, .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Come rendere la tua home page davvero efficace | Lucy’s Coding</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <meta name="description"
+        content="Scopri i tre elementi fondamentali che rendono una home page chiara, professionale ed efficace nel trasformare i visitatori in clienti. Mini-guida per attività locali e freelance.">
+
+    <meta name="keywords"
+        content="home page efficace, migliorare homepage, sito che converte, struttura home page, web design chiaro">
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav class="container" aria-label="Navigazione principale">
+            <a href="index.html" class="logo">Lucy’s Coding</a>
+
+            <button class="nav-toggle" aria-expanded="false" aria-label="Apri menu" aria-controls="primary-navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <div class="nav-menu" id="primary-navigation">
+                <ul>
+                    <li><a href="index.html#hero">Home</a></li>
+                    <li><a href="index.html#chi-sono">Chi sono</a></li>
+                    <li><a href="index.html#metodo">Metodo</a></li>
+                    <li><a href="index.html#progetti">Progetti</a></li>
+                    <li><a href="index.html#servizi">Servizi</a></li>
+                    <li><a href="index.html#blog">Risorse</a></li>
+                </ul>
+                <a href="index.html#contatti" class="nav-cta">Lavora con me</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ARTICOLO -->
+    <main class="blog-article container">
+        <!-- Bottone torna indietro: usa history.back() con fallback a index.html -->
+        <a href="index.html" class="back-btn" onclick="history.back(); return false;" aria-label="Torna alla pagina precedente">&#8592; Torna indietro</a>
+        <header class="blog-hero">
+            <p class="blog-eyebrow">Mini-guida strategica</p>
+
+            <h1>Come rendere la tua home page davvero efficace</h1>
+
+            <p class="section-subtitle">
+                I tre elementi essenziali che trasformano una home da semplice vetrina a una pagina che converte.
+            </p>
+
+            <div class="blog-meta">
+                <span>⏱ Lettura: 3 min</span>
+                <span>✨ Perfetta per siti di attività locali & personal brand</span>
+            </div>
+        </header>
+
+        <article>
+
+            <section class="blog-section">
+                <h2>1. Dì subito cosa fai (e per chi)</h2>
+                <p>
+                    La tua home deve rispondere immediatamente a tre domande:
+                    chi sei, cosa offri e per quale tipo di cliente.
+                    Una headline chiara può da sola aumentare le conversioni.
+                </p>
+            </section>
+
+            <section class="blog-section">
+                <h2>2. Aggiungi la prova sociale</h2>
+                <p>
+                    Recensioni, loghi clienti, casi studio: bastano pochi elementi
+                    per aumentare in modo enorme la fiducia dell’utente.
+                </p>
+
+                <div class="blog-highlight">
+                    <p><strong>Suggerimento:</strong> anche 2 testimonianze sono meglio di nessuna.</p>
+                </div>
+            </section>
+
+            <section class="blog-section">
+                <h2>3. Guida l’utente con una struttura semplice</h2>
+                <p>
+                    Una home efficace non è lunga o complessa: è ordinata.
+                    Deve accompagnare l’utente verso un’unica azione,
+                    evitando blocchi inutili o sezioni troppo dispersive.
+                </p>
+
+                <ul class="blog-list">
+                    <li>Hero chiaro e diretto</li>
+                    <li>Spiegazione semplice di cosa fai</li>
+                    <li>Servizi principali</li>
+                    <li>Chi sei</li>
+                    <li>Progetti</li>
+                    <li>CTA finale</li>
+                </ul>
+            </section>
+
+            <section class="blog-section blog-cta">
+                <h2>Vuoi migliorare la tua home page?</h2>
+                <p>Scrivimi una mail e ti preparo una valutazione preliminare per capire se ci sono margini di
+                    miglioramento.</p>
+
+                <a href="mailto:lucyscodingasmr@gmail.com" class="btn btn-primary btn-contact">
+                    Richiedi valutazione
+                </a>
+
+                <p class="cta-note">Ti rispondo personalmente entro 24 ore.</p>
+            </section>
+
+
+        </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Lucy’s Coding. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
