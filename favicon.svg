@@ -1,8 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <circle cx="256" cy="256" r="256" fill="#0d0d1a"/>
-  <circle cx="256" cy="256" r="240" fill="none" stroke="#4a69ff" stroke-width="20"/>
+  
+  <circle cx="256" cy="256" r="240" fill="none" stroke="#ffffff" stroke-width="15" opacity="0.2"/>
+
   <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" 
-        fill="#f0f0f0" font-family="monospace" font-weight="bold" font-size="240">
-    LC
+        fill="#f0f0f0" font-family="'Times New Roman', serif" font-weight="bold" font-size="85">
+    IMLUNAR.
   </text>
 </svg>
