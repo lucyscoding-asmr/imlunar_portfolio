@@ -287,6 +287,54 @@ body.blog-page { background-color: var(--bg-color); }
 .blog-cta .btn { display: inline-block; margin-top: 1.5rem; }
 .cta-note { margin-top: 0.8rem; opacity: 0.8; font-size: 0.95rem; color: var(--secondary-text-color); }
 
+/* ========= FILTRI PORTFOLIO ========= */
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+.filter-btn {
+    padding: 0.45rem 1.2rem;
+    border-radius: 20px;
+    border: 1px solid #2a2a3e;
+    background: transparent;
+    color: var(--secondary-text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.filter-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+.filter-btn.active {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+.project-card.hidden {
+    display: none;
+}
+
+/* ========= GIF CONTAINER (My Personal Gym) ========= */
+.gif-container {
+    height: 400px;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.gif-container img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
 /* ========= RESPONSIVE ========= */
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }

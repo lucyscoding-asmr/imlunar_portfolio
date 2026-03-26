@@ -7,6 +7,15 @@
     <title>IMLUNAR Studio | Web Design Modena</title>
     <meta name="description"
         content="IMLUNAR Studio — Siti web professionali per attività locali a Modena e provincia. Design strategico, consegna rapida, risultati concreti.">
+    <meta property="og:title" content="IMLUNAR Studio | Web Design Modena" />
+    <meta property="og:description" content="Siti web e applicazioni su misura per attività locali. Design strategico, risultati concreti." />
+    <meta property="og:image" content="https://imlunar.netlify.app/images/preview.png" />
+    <meta property="og:url" content="https://imlunar.netlify.app" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="IMLUNAR Studio | Web Design Modena" />
+    <meta name="twitter:description" content="Siti web e applicazioni su misura per attività locali. Design strategico, risultati concreti." />
+    <meta name="twitter:image" content="https://imlunar.netlify.app/images/preview.png" />
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -184,13 +193,99 @@
 
         <section id="progetti" class="container">
             <h2>Portfolio & Demo</h2>
-            <p class="section-subtitle" style="text-align: center; margin-bottom: 3rem;">
+            <p class="section-subtitle" style="text-align: center; margin-bottom: 2rem;">
                 Esplora i miei progetti dimostrativi. Ecco come applico strategia e design per risolvere
                 problemi reali in diversi settori.
             </p>
+
+            <!-- FILTRI -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="tutti">Tutti</button>
+                <button class="filter-btn" data-filter="web-app">Web App</button>
+                <button class="filter-btn" data-filter="ristorazione">Ristorazione</button>
+                <button class="filter-btn" data-filter="fitness">Fitness</button>
+                <button class="filter-btn" data-filter="benessere">Benessere</button>
+                <button class="filter-btn" data-filter="professionisti">Professionisti</button>
+                <button class="filter-btn" data-filter="b2b">B2B</button>
+            </div>
+
             <div class="project-grid">
 
-                <div class="project-card">
+                <!-- My Personal Gym (GIF) -->
+                <div class="project-card" data-category="web-app">
+                    <div class="slider-container">
+                        <div class="slide active">
+                            <img src="images/IMG_3444.webp"
+                                alt="Schermata Login My Personal Gym">
+                        </div>
+                        <div class="slide active">
+                            <img src="images/IMG_3449.webp"
+                                alt="Schermata Register My Personal Gym">
+                        </div>
+                        <div class="slide active">
+                            <img src="images/IMG_3445.webp"
+                                alt="Schermata Dashboard My Personal Gym">
+                        </div>
+                        <div class="slide active">
+                            <img src="images/IMG_3446.webp"
+                                alt="Schermata Scheda My Personal Gym">
+                        </div>
+                        <div class="slide active">
+                            <img src="images/IMG_3450.webp"
+                                alt="Schermata Profilo My Personal Gym">
+                        </div>
+                        <button class="slider-btn prev">&#10094;</button>
+                        <button class="slider-btn next">&#10095;</button>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>My Personal Gym</h3>
+                        <div class="project-tags">
+                            <span class="tag">React 18</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Vite</span>
+                            <span class="tag">Tailwind CSS</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">PWA</span>
+                        </div>
+                        <p>Web app pensata per l'uso diretto in palestra. Gestione clienti, monitoraggio progressi e
+                            schede di allenamento interattive a portata di smartphone.</p>
+                        <a href="https://mypersonalgym-97a3b.web.app/dashboard" target="_blank"
+                            rel="noopener noreferrer" class="project-btn">Visita la Web App</a>
+                    </div>
+                </div>
+
+                <!-- Bella Napoli Premium -->
+                <div class="project-card" data-category="web-app ristorazione">
+                    <div class="slider-container">
+                        <div class="slide active">
+                            <img src="images/bellanapolipremium.netlify.app_desktop.webp"
+                                alt="Anteprima desktop Bella Napoli Premium">
+                        </div>
+                        <div class="slide">
+                            <img src="images/bellanapolipremium.netlify.app_mobile.webp"
+                                alt="Anteprima mobile Bella Napoli Premium">
+                        </div>
+                        <button class="slider-btn prev">&#10094;</button>
+                        <button class="slider-btn next">&#10095;</button>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Bella Napoli Premium</h3>
+                        <div class="project-tags">
+                            <span class="tag">React 18</span>
+                            <span class="tag">Vite</span>
+                            <span class="tag">Tailwind CSS</span>
+                            <span class="tag">Framer Motion</span>
+                            <span class="tag">Netlify</span>
+                        </div>
+                        <p>Piattaforma avanzata per la gestione degli ordini e menù digitale interattivo. Un'esperienza
+                            fluida e premium per i clienti della pizzeria.</p>
+                        <a href="https://bellanapolipremium.netlify.app" target="_blank" rel="noopener noreferrer"
+                            class="project-btn">Visita il Sito</a>
+                    </div>
+                </div>
+
+                <!-- Osteria della Ghirlandina -->
+                <div class="project-card" data-category="ristorazione">
                     <div class="slider-container">
                         <div class="slide active">
                             <img src="images/osteriaghirlandina.netlify.app_desktop.webp" alt="Anteprima desktop">
@@ -211,12 +306,12 @@
                         <p>Sito vetrina per ristorante locale: hero emozionale, menù del giorno e sezione
                             contatti ottimizzata per prenotazioni dirette.</p>
                         <a href="https://osteriaghirlandina.netlify.app" target="_blank" rel="noopener noreferrer"
-                            class="project-btn">
-                            Visita il Sito</a>
+                            class="project-btn">Visita il Sito</a>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <!-- Pizzeria Bella Napoli -->
+                <div class="project-card" data-category="ristorazione">
                     <div class="slider-container">
                         <div class="slide active">
                             <img src="images/pizzeriabellanapolidemo.netlify.app_desktop.webp"
@@ -239,12 +334,12 @@
                         <p>Menù interattivo con filtri per categoria, sezione recensioni Google e CTA diretta
                             verso Deliveroo e telefono.</p>
                         <a href="https://pizzeriabellanapolidemo.netlify.app" target="_blank" rel="noopener noreferrer"
-                            class="project-btn">
-                            Visita il Sito</a>
+                            class="project-btn">Visita il Sito</a>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <!-- GlowMe Estetica -->
+                <div class="project-card" data-category="benessere">
                     <div class="slider-container">
                         <div class="slide active">
                             <img src="images/glowmeesteticademo.netlify.app_desktop.webp"
@@ -267,12 +362,12 @@
                         <p>Landing page per centro estetico con protocolli trattamenti, galleria
                             prima/dopo e prenotazione diretta via WhatsApp.</p>
                         <a href="https://glowmeesteticademo.netlify.app" target="_blank" rel="noopener noreferrer"
-                            class="project-btn">
-                            Visita il Sito</a>
+                            class="project-btn">Visita il Sito</a>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <!-- LineUp Fitness -->
+                <div class="project-card" data-category="fitness">
                     <div class="slider-container">
                         <div class="slide active">
                             <img src="images/fitnessdemowebsite.netlify.app_desktop.webp"
@@ -295,12 +390,12 @@
                         <p>Landing page per palestra: hero ad alto impatto emotivo, accordion servizi
                             e CTA iscrizione sempre visibile su ogni dispositivo.</p>
                         <a href="https://fitnessdemowebsite.netlify.app" target="_blank" rel="noopener noreferrer"
-                            class="project-btn">
-                            Visita il Sito</a>
+                            class="project-btn">Visita il Sito</a>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <!-- Dott. Mario Rossi -->
+                <div class="project-card" data-category="professionisti">
                     <div class="slider-container">
                         <div class="slide active">
                             <img src="images/psicologidemo.netlify.app_Desktop.webp" alt="Anteprima desktop Psicologo">
@@ -321,12 +416,12 @@
                         <p>Sito per psicoterapeuta: copy centrato sull'empatia, percorso "come lavoro"
                             in 3 step e FAQ per ridurre le resistenze al primo contatto.</p>
                         <a href="https://psicologidemo.netlify.app/" target="_blank" rel="noopener noreferrer"
-                            class="project-btn">
-                            Visita il Sito</a>
+                            class="project-btn">Visita il Sito</a>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <!-- SIS Modena -->
+                <div class="project-card" data-category="b2b">
                     <div class="slider-container">
                         <div class="slide active">
                             <img src="images/sismodena.netlify.app_desktop.webp" alt="Anteprima desktop SIS Modena">
@@ -347,8 +442,7 @@
                         <p>Sito per carpenteria metallica B2B: galleria progetti reali, sezione
                             certificazioni e form preventivo rapido per acquisire lead.</p>
                         <a href="https://sismodena.netlify.app/" target="_blank" rel="noopener noreferrer"
-                            class="project-btn">
-                            Visita il Sito</a>
+                            class="project-btn">Visita il Sito</a>
                     </div>
                 </div>
 
@@ -360,7 +454,7 @@
                 <div class="about-animation">
                     <div class="about-stats">
                         <div class="stat-card">
-                            <span class="stat-number">6+</span>
+                            <span class="stat-number">8+</span>
                             <span class="stat-label">Progetti nel portfolio</span>
                         </div>
                         <div class="stat-card">

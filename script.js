@@ -180,4 +180,25 @@ document.addEventListener('DOMContentLoaded', function () {
         init();
         animate();
     }
+
+    // =========================================
+// 5. FILTRI PORTFOLIO
+// =========================================
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        projectCards.forEach(card => {
+            if (filter === 'tutti' || card.dataset.category.split(' ').includes(filter)) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+    });
+});
 });
